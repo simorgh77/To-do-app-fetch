@@ -33,10 +33,14 @@ export function makeServer({ environment = "test" } = {}) {
         this.get("/users", (schema) => {
           return schema.users.all();
         });
+        this.post("/users", (schema, request) => {
+        let attrs = JSON.parse(request.requestBody)
+        return schema.users.create(attrs)
+      });
         this.get("/users/:id", (schema,request) => {
             let id =request.params.id
           return schema.users.find(id);
-        })
+        });
       },
     })
   

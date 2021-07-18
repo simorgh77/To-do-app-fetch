@@ -25,9 +25,10 @@ if(loading) return(
 <div className="spinner-border text-primary text-center " role="status">
 <span className="sr-only w-100"></span>
 </div>)
+          debugger
  return (
   <Container className="w-25 text-center">
-      <Row className="d-flex align-items-center" style={{ minHeight: "40rem" }}>
+      <Row className="d-flex align-items-center ">
         <Table striped bordered hover variant="primary">
           <thead>
             <tr>
@@ -47,6 +48,8 @@ if(loading) return(
             ))}
           </tbody>
         </Table>
+        <button onClick={()=>history.push('/Add')} className='btn btn-success m-0'>
+          Create new user</button>
       </Row>
     </Container>
             

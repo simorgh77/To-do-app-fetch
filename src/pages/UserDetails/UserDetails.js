@@ -23,12 +23,12 @@ const UserDetails=()=> {
     }, [id])
     return (
         <div>
+          { (loading) ? <Skeleton/>:
               <Card
     bg={"warning"}
     style={{ width: '18rem',margin:'15% auto' }}
     className="mb-2"
   >
-        { (loading) ? <Skeleton/>:
           
           <>
     <Card.Header>{oneuser.name}</Card.Header>
@@ -39,10 +39,10 @@ const UserDetails=()=> {
       </Card.Text>
     </Card.Body>
         </>
-        }
       
   </Card>
-        </div>
+        }
+    </div>
     )
 }
 export default UserDetails
